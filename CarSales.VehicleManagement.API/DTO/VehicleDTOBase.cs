@@ -1,13 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
-using CarSales.VehicleManagement.Domain.Enums;
+﻿using CarSales.VehicleManagement.Domain.Enums;
 
-namespace CarSales.VehicleManagement.Domain.Entities
+namespace CarSales.VehicleManagement.API.DTO
 {
-    public abstract class VehicleBase
+    public class VehicleDTOBase
     {
-        [Key]
-        public int Id { get; set; }
-
         public int VehicleId { get; set; }
 
         public string Make { get; set; }
@@ -18,7 +14,5 @@ namespace CarSales.VehicleManagement.Domain.Entities
         protected VehicleType VehicleType { get; set; }
 
         public double Price { get; set; }
-
-        public Vehicle Vehicle { get; set; }
     }
 }
