@@ -9,11 +9,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{117297F3-7BD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{2E0DD9D0-449E-42EE-9DBF-3F09F0C72439}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DATA", "DATA", "{4733C3CD-54EC-4CED-AAEA-9EEC984CEB6A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{4733C3CD-54EC-4CED-AAEA-9EEC984CEB6A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSales.VehicleManagement.API.Tests.Unit", "CarSales.VehicleManagement.API.Tests.Unit\CarSales.VehicleManagement.API.Tests.Unit.csproj", "{B2C3044C-F7B4-421F-BEB1-08B911FD329F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSales.VehicleManagement.DATA", "CarSales.VehicleManagement.DATA\CarSales.VehicleManagement.DATA.csproj", "{225EE4D3-EAE0-4042-B62E-575D0A36BD68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSales.VehicleManagement.Data", "CarSales.VehicleManagement.DATA\CarSales.VehicleManagement.Data.csproj", "{225EE4D3-EAE0-4042-B62E-575D0A36BD68}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarSales.VehicleManagement.Domain", "CarSales.VehicleManagement.Domain\CarSales.VehicleManagement.Domain.csproj", "{29F2700B-C473-4F32-A250-036DA656037E}"
 EndProject

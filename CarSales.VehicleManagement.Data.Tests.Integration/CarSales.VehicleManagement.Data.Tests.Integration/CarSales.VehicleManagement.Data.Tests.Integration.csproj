@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\CarSales.VehicleManagement.DATA\CarSales.VehicleManagement.DATA.csproj" />
+    <ProjectReference Include="..\..\CarSales.VehicleManagement.DATA\CarSales.VehicleManagement.Data.csproj" />
   </ItemGroup>
 
 </Project>
