@@ -32,15 +32,15 @@ namespace CarSales.VehicleManagement.API.Middleware
         {
             var exceptionModel = new ExceptionModel();
 
-            if (exception is VehicleNotFoundException vehicleNotFoundException)
+            if (exception is NotFoundException vehicleNotFoundException)
             {
                 exceptionModel.Errors.Add(vehicleNotFoundException.Message);
                 httpContext.Response.StatusCode = 404;
                 httpContext.Response.ContentType = MediaTypeNames.Application.Json;
             }
-            else if (exception is InvalidVehicleTypeException invalidVehicleTypeException)
+            else if (exception is BadRequestException badRequestException)
             {
-                exceptionModel.Errors.Add(invalidVehicleTypeException.Message);
+                exceptionModel.Errors.AddRange(badRequestException.Errors);
                 httpContext.Response.StatusCode = 400;
                 httpContext.Response.ContentType = MediaTypeNames.Application.Json;
             }

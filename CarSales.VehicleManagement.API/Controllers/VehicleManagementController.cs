@@ -45,6 +45,16 @@ namespace CarSales.VehicleManagement.API.Controllers
             return Ok(response.VehicleEntity);
         }
 
+        [HttpGet]
+        [Route("list")]
+        public async Task<ActionResult> GetVehicleList([FromQuery] GetVehicleListRequest getVehicleListRequest, CancellationToken cancellationToken = default)
+        {
+            var response = await _mediator.Send(getVehicleListRequest, cancellationToken);
+
+            //If we got here without exceptions then we know it's all good to return the response
+            return Ok(response.VehicleList);
+        }
+
         [HttpDelete]
         [Route("{VehicleId}")]
         public async Task<ActionResult> DeleteVehicle([FromRoute] DeleteVehicleRequest deleteVehicleRequest, CancellationToken cancellationToken = default)

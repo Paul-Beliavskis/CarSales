@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using CarSales.VehicleManagement.API.Constants;
 using CarSales.VehicleManagement.API.Exceptions;
 using CarSales.VehicleManagement.API.HandlerRequests;
 using CarSales.VehicleManagement.DATA;
@@ -25,7 +26,8 @@ namespace CarSales.VehicleManagement.API.RequestHandlers
 
         public async Task<bool> Handle(DeleteVehicleRequest request, CancellationToken cancellationToken)
         {
-            var vehicle = _carSalesDbContext.Vehicles.AsNoTracking().FirstOrDefault(x => x.Id == request.VehicleId) ?? throw new VehicleNotFoundException(request.VehicleId);
+            var vehicle = _carSalesDbContext.Vehicles.AsNoTracking().FirstOrDefault(x => x.Id == request.VehicleId)
+            ?? throw new NotFoundException(string.Format(ErrorConstants.VehicleNotFoundException, request.VehicleId));
 
             _carSalesDbContext.Vehicles.Remove(vehicle);
             await _carSalesDbContext.SaveChangesAsync();

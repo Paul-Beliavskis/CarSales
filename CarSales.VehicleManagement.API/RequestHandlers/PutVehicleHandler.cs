@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
+using CarSales.VehicleManagement.API.Constants;
 using CarSales.VehicleManagement.API.DTO;
 using CarSales.VehicleManagement.API.Exceptions;
 using CarSales.VehicleManagement.API.HandlerRequests;
@@ -32,7 +33,7 @@ namespace CarSales.VehicleManagement.API.RequestHandlers
 
             if (request.Id.HasValue && request.Id > 0)
             {
-                var car = _carSalesDbContext.Cars.FirstOrDefault(x => x.Vehicle.Id == request.Id) ?? throw new VehicleNotFoundException(request.Id);
+                var car = _carSalesDbContext.Cars.FirstOrDefault(x => x.Vehicle.Id == request.Id) ?? throw new NotFoundException(ErrorConstants.VehicleTypeDoesNotExistMessage);
 
                 _mapper.Map(request, car);
 
@@ -63,7 +64,7 @@ namespace CarSales.VehicleManagement.API.RequestHandlers
         {
             if (vehicleType != VehicleType.Car)
             {
-                throw new InvalidVehicleTypeException();
+                throw new BadRequestException(ErrorConstants.VehicleTypeDoesNotExistMessage);
             }
         }
     }

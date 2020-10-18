@@ -1,8 +1,6 @@
-﻿using CarSales.VehicleManagement.Domain.Enums;
-
-namespace CarSales.VehicleManagement.API.DTO
+﻿namespace CarSales.VehicleManagement.API.DTO
 {
-    public class VehicleDTOBase
+    public abstract class VehicleDTOBase
     {
         public int VehicleId { get; set; }
 
@@ -10,8 +8,7 @@ namespace CarSales.VehicleManagement.API.DTO
 
         public string Model { get; set; }
 
-        //This is protected because only concrete classes should set this
-        protected VehicleType VehicleType { get; set; }
+        public string VehicleType { get; set; }
 
         public double Price { get; set; }
     }
